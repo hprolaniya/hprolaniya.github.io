@@ -3,72 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Sudoku - Sodan Apps</title>
+    <title>Sodan Studio | Best Classic Sudoku & Indian Board Games</title>
+    <meta name="description" content="Play the best mobile puzzle and board games by Sodan Studio. Download Smart Sudoku for classic 9x9 and 12x12 grids, and get ready for Indian Ludo: Chowkabara online multiplayer!">
+    <meta name="keywords" content="Smart Sudoku, Sodan Studio, Sodan Apps, Hanuman Prasad Choudhary, Chowkabara game, Indian Ludo, mobile games, classic sudoku puzzle, offline sudoku, board games">
+    <meta name="author" content="Hanuman Prasad Choudhary">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sodan Studio - Fun & Smart Mobile Games">
+    <meta property="og:description" content="Challenge your mind with Smart Sudoku and explore traditional Indian board games like Chowkabara.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hprolaniya.github.io/">
+    <meta property="og:site_name" content="Sodan Studio">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sodan Studio",
+      "url": "https://hprolaniya.github.io/",
+      "email": "hprolaniya@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Hanuman Prasad Choudhary"
+      },
+      "sameAs": [
+        "https://play.google.com/store/apps/developer?id=Sodan+Studio"
+      ]
+    }
+    </script>
+
     <style>
+        /* CSS Variables for easy theming */
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --bg-color: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            text-align: center;
-            padding: 50px 20px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
-        }
-        .container {
-            max-width: 600px;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin: 0 auto;
-        }
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.1em;
+            padding: 0;
             line-height: 1.6;
-            color: #555;
         }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            color: var(--text-main);
+            margin-bottom: 40px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .game-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .game-title {
+            font-size: 2em;
+            color: var(--primary);
+            margin: 0 0 10px 0;
+        }
+
+        .badge {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .badge.new {
+            background: #fef08a;
+            color: #854d0e;
+        }
+
+        .features-list {
+            margin: 15px 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: #3498db;
+            background: var(--primary);
             color: white;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 8px;
             font-weight: bold;
+            margin-top: 15px;
             transition: background 0.3s;
         }
+
         .btn:hover {
-            background-color: #2980b9;
+            background: var(--secondary);
         }
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #888;
+
+        .btn.disabled {
+            background: #cbd5e1;
+            color: #64748b;
+            cursor: not-allowed;
         }
-        .footer a {
-            color: #3498db;
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            color: var(--text-muted);
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        footer a {
+            color: var(--primary);
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            .game-card { flex-direction: column; text-align: center; }
+            .features-list { text-align: left; display: inline-block; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Smart Sudoku</h1>
-        <p>Welcome to the official page of Smart Sudoku by Sodan Apps. Challenge your brain with our clean, fast, and feature-rich Sudoku puzzle game.</p>
-        
-        <p>Available soon on the Google Play Store!</p>
+    <header>
+        <h1>Sodan Studio</h1>
+        <p>Creating Fun, Smart, and Engaging Mobile Games</p>
+    </header>
 
-        <div class="footer">
-            <p>Developed by H.P. Rolaniya</p>
-            <p>Contact: <a href="mailto:hprolaniya@gmail.com">hprolaniya@gmail.com</a></p>
-        </div>
-    </div>
+    <main>
+        <section id="games">
+            <h2 class="section-title">Our Premium Games</h2>
+
+            <article class="game-card">
+                <div class="game-info">
+                    <span class="badge">Available Now</span>
+                    <h3 class="game-title">Smart Sudoku</h3>
+                    <p>Challenge your mind and sharpen your logic with <strong>Smart Sudoku</strong>, the ultimate brain training puzzle game designed for beginners and masters alike!</p>
+                    <ul class="features-list">
+                        <li><strong>Multiple Grids:</strong> 6x6 for quick fun, classic 9x9, and expert 12x12.</li>
+                        <li><strong>4 Difficulties:</strong> Easy to Expert with advanced stats tracking.</li>
+                        <li><strong>Multilingual:</strong> Play in English, हिन्दी, ગુજરાતી, मराठी, தமிழ், and more!</li>
+                        <li><strong>Play Offline:</strong> Clean interface with battery-saving Dark Mode.</li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.sodanapps.smartsudoku" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Download Smart Sudoku on Google Play">Download on Google Play</a>
+                </div>
+            </article>
+
+            <article class="game-card">
+                <div class="game-info">
+                    <span class="badge new">Coming Soon</span>
+                    <h3 class="game-title">इंडियन लूडो: Chowkabara</h3>
+                    <p>Get ready to experience the classic traditional Indian board game like never before! Play the ancient game of <strong>Chowka Bara</strong> with friends and family online.</p>
+                    <ul class="features-list">
+                        <li><strong>Online Multiplayer:</strong> Host private servers to play with family.</li>
+                        <li><strong>Classic Rules:</strong> Authentic gameplay with a modern digital twist.</li>
+                        <li><strong>Global Matchmaking:</strong> Play with friends or match with players globally.</li>
+                    </ul>
+                    <span class="btn disabled" aria-label="Chowkabara Coming Soon">Coming to App Store & Google Play</span>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sodan Studio by Hanuman Prasad Choudhary. All rights reserved.</p>
+        <p>Contact: <a href="mailto:hprolaniya@gmail.com">hprolaniya@gmail.com</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+    </footer>
 
 </body>
 </html>
